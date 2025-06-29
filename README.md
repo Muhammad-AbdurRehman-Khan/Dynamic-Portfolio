@@ -1,2 +1,2 @@
 # Dynamic-Portfolio
-This portfolio shows the skill of author
+This is a my semester project of Information & Communication Technology (ICT) 
