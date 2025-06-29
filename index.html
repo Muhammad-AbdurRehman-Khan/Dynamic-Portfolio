@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport settings -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1.0">
+  <title>Dynamic Portfolio</title>
+  <!-- Link to external CSS stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <!-- Main header of the portfolio -->
+    <h1>Dynamic Portfolio</h1>
+  </header>
+  
+  <nav>
+    <!-- Navigation links to different sections of the portfolio -->
+    <a href="#profile">Profile</a>
+    <a href="#academic">Academic Background</a>
+    <a href="#cv">CV Viewer</a>
+    <a href="#Gallery">Gallery</a>
+    <a href="#Video">Video</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Ticker section for announcements -->
+  <section id="ticker">
+    <marquee behavior="scroll" direction="left" scrollamount="5">
+      Welcome to my Dynamic Portfolio! Stay tuned for updates and new projects. 🚀
+    </marquee>
+  </section>
+
+  <section id="profile" class="profile">
+    <div class="container">
+      <!-- Personal profile section -->
+      <h2>Personal Profile</h2>
+      <img src="pic.jpg" alt="Your Picture">
+      <p><strong>MUHAMMAD ABDUR REHMAN KHAN</strong></p>
+      <p><strong>26190(36)</strong></p>
+      <p><strong>Bio:</strong> A passionate web developer learning and implementing new technologies.</p>
+    </div>
+  </section>
+
+  <section id="academic" class="container">
+    <h2>Academic Background</h2>
+    <table id="academicTable">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">Degree</th>
+          <th onclick="sortTable(1)">Institution</th>
+          <th onclick="sortTable(2)">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SECONDARY SCHOOL (SSC)</td>
+          <td>ST. HELEN'S SCHOOL & COLLEGE</td>
+          <td>2022</td>
+        </tr>
+        <tr>
+          <td>HIGHER SECONDARY SCHOOL (HSSC)</td>
+          <td>QURTUBA PUBLIC SCHOOL & COLLEGE</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>SOFTWARE ENGINEERING</td>
+          <td>UET Peshawar ABBOTTABAD CAMPUS</td>
+          <td>2024-ONWARDS</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="cv" class="container">
+    <h2>Interactive CV Viewer</h2>
+    <button id="cvToggleButton">Display CV</button>
+    <button id="cvToggleButton" onclick="window.open('CV.pdf', '_blank')">Open CV in New Tab</button>
+    <div id="cvContainer" class="hidden">
+      <iframe src="CV.pdf" width="100%" height="500px"></iframe>
+    </div>
+  </section>
+
+  <section style="text-align: center;" id="Gallery">
+    <h2>Gallery</h2>
+    <div id="galleryContainer" class="gallery">
+      <!-- Gallery images -->
+      <figure style="display: inline-block;margin: 22px;">
+        <img src="img 1.jpg" alt="Image 1">
+        <figcaption>AZAD JAMMU KASHMIR</figcaption>
+      </figure>
+      <figure style="display: inline-block;margin: 22px;">
+        <img src="img 2.jpg" alt="Image 2">
+        <figcaption>DERA ISMAIL KHAN</figcaption>
+      </figure>
+      <figure style="display: inline-block;margin: 22px;">
+        <img src="img 3.jpg" alt="Image 3">
+        <figcaption>ISLAMABAD</figcaption>
+      </figure>
+      <figure style="display: inline-block;margin: 22px;">
+        <img src="img 4.jpg" alt="Image 4">
+        <figcaption>ABBOTTABAD</figcaption>
+      </figure>  
+    </div>
+  </section>
+
+  <section style="text-align: center;" id="Video">
+    <h2>Video</h2>
+    <div id="VideoContainer" class="mpv">
+      <figure>
+        <video controls>
+          <source src="Screen Recording 2025-01-05 231016.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>This is a demo video showcasing my skills.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <div class="contact-form-container">
+      <h2>Contact Me</h2>
+      <form id="contactForm" target="_blank" action="https://formsubmit.co/643433926a11d558510a43e663e105ad" method="POST">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <label for="name">Name:</label><br>        
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="col">
+              <label for="email">Email:</label><br>         
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label><br>   
+          <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="theme-switcher">
+    <button id="themeButton">Switch to Dark Mode</button>
+  </div>
+
+  <div id="progressTracker"></div>
+
+  <script src="script.js"></script>
+
+  <!-- Footer Section -->
+  <footer>
+    <center>
+      <small>This Portfolio is made of Muhammad Abdur Rehman Khan&copy; || 2025, All Rights Reserved || This Website is Designed By Sayal Developers&trade;</small>
+    </center>
+    <!-- Social Media Buttons -->
+    <div class="social-media-buttons">
+      <a href="https://www.instagram.com/abdurrehmansayal/profilecard/?igsh=MmZ6MDNiaHhoYmt1" target="_blank" class="social-button instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/AbdurrehmanSayal?mibextid=ZbWKwL" target="_blank" class="social-button facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="http://www.linkedin.com/in/muhammad-abdur-rehman-khan-4b1580336" target="_blank" class="social-button linkedin">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+  </footer>
+</body>
+
+</html>
